@@ -2,6 +2,8 @@ var webpack = require("webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var config = require("./webpack.dev.config");
+
 config.debug = false;
 
 config.entry = './dev/app.jsx';
