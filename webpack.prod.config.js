@@ -2,14 +2,14 @@ var webpack = require("webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var config = require("./webpack.dev.config");
+var options = require("./webpack.dev.config");
 
-config.entry = './dev/app.jsx';
+options.entry = './dev/app.jsx';
 
-config.output.path = path.join(__dirname, 'dist');
-delete config.output.publicPath;
+options.output.path = __dirname + '/dist';
+options.output.publicPath = "/dist/";
 
-config.plugins = [
+options.plugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.DefinePlugin({
     '__DEV__': false,
@@ -27,5 +27,5 @@ config.plugins = [
   new ExtractTextPlugin('style.css', { allChunks: true })
 ];
 
-delete config.debug;
-delete config.devtool;
+delete options.debug;
+delete options.devtool;
