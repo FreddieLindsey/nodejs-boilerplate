@@ -4,8 +4,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = require("./webpack.dev.config");
 
-config.debug = false;
-
 config.entry = './dev/app.jsx';
 
 config.output.publicPath = path.join(__dirname, 'dist');
